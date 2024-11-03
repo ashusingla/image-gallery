@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Addin App</title>
+    <style>
+        /* * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        } */
+
+        .drawer-content {
+            width: 100%;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        h1,
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .screenshot {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0e0e0;
+            height: 150px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .support,
+        .open-app {
+            text-align: center;
+        }
+
+        .support a,
+        .open-app a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        .open-app button {
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .open-app button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="drawer-content">
+        <h1>My Addin App</h1>
+        <p><strong>Version 1.0.0</strong></p>
+
+        <h2>Description</h2>
+        <p>This is a powerful image editing addin that allows you to easily add stickers, shapes, and text to your
+            canvas. Enhance your creativity with this lightweight tool designed to make image manipulation simple and
+            fun!</p>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Add stickers, shapes, and text with one click</li>
+            <li>Convert images to PNG or JPEG formats</li>
+            <li>Resize, rotate, and customize objects on the canvas</li>
+        </ul>
+
+        <h2>Screenshots</h2>
+        <div class="screenshot">App Screenshot</div>
+
+        <div class="support">
+            <p>For any support, please contact us at <a href="mailto:support@myaddin.com">support@myaddin.com</a>.</p>
+        </div>
+
+        <div class="open-app">
+            <button id="openButton">Open App</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('openButton').onclick = function () {
+            // Send a specific message to the parent window
+            window.parent.postMessage({ action: 'openApp' }, '*');
+        };
+    </script>
+</body>
+
+</html>
